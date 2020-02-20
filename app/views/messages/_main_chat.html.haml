@@ -1,0 +1,40 @@
+.main_chat
+  .main_chat__groupinfo
+    .main_chat__groupinfo__left
+      %p.main_chat__groupinfo__left__currentgroup
+        あ
+      %ul.main_chat__groupinfo__left__currentgroup__user
+        Member :ああ
+        %li.main_chat__groupinfo__left__currentgroup__user__name
+
+    .main_chat__groupinfo__right
+      = link_to "#" , class: "btn-edit" do
+        Edit
+    
+  .main_chat__messagelist
+    .main_chat__messagelist__contents
+      .main_chat__messagelist__contents__info
+        .main_chat__messagelist__contents__info__talker
+          あ
+        .main_chat__messagelist__contents__info__date
+          2020/2/20
+      .main_chat__messagelist__contents__text
+        アイウエオ
+  
+ 
+  .main_chat__messageform
+    .main_chat__messageform__box
+      .main_chat__messageform__box__type
+        .main_chat__messageform__box__type__text
+
+          %input{type: "text", id: "message-content", placeholder:"type a message"}
+        .main_chat__messageform__box__type__image
+          %label{class: "input-box__image", for: "image"}
+            = icon('fas', 'image')
+            %input{type: "file", id: "image"}
+    .main_chat__messageform__box__right
+      Send
+      -#= form_for @ do |f|(今後の実装で使います)
+      
+    
+ 

@@ -1,0 +1,119 @@
+.main_chat{
+  background-color: #ffffff;
+  width: calc(100vw - 300px);
+  &__groupinfo{
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    &__left{
+      margin-top: 35px;
+      &__currentgroup{
+        color: #333333;
+        font-size: 20px;
+        margin-bottom: 15px;
+        &__user{
+        display: flex;
+        font-size: 12px;
+        color: #999999;
+        }
+      }
+    }
+    &__right{
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px;
+      margin-top: 30px;
+      position: absolute;
+      right: 40px;
+      border: solid 1px #38aef0;
+      .btn-edit{
+        color: #38aef0;
+        font-size: 16px;
+        text-decoration: none;
+      }
+    }
+  }
+  &__messagelist{
+    background-color: #fafafa;
+    height: calc(100% - 190px);
+    padding: 46px 40px;
+    overflow: scroll;
+    &__contents{
+      padding-bottom: 40px;
+      &__info{
+        display: flex;
+        margin-bottom: 10px;
+        &__talker{
+          color: #434a54;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__date{
+          color: #999999;
+          font-size: 12px;
+          margin-left: 10px;
+        }
+      }
+      &__text{
+        color: #434a54;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  &__messageform{
+    background-color: #ddd;
+    height: 90px;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    bottom: 0;
+    &__box{
+      background-color: white;
+      display: flex;
+      width: calc(100% - 100px);
+      &__type{
+        width: 100%;
+        position: relative;
+        background-color: #ffffff;
+        #message-content{
+          height: 50px;
+          width: 100%;
+          padding: 0 40px 0 10px;
+          color: #434a54;
+          border-style: none;
+        }
+        &__image{
+          font-size:1.3rem;
+          top: 10px;
+          right: 10px;
+          position: absolute;
+          cursor: pointer;
+          .input-box__image{
+            i{
+              display: inline-block;
+              font-size: inherit;
+              color: black;
+            }
+            input{
+              display: none;
+            }
+
+          }
+        }
+   
+      }
+      &__right{
+        height: 50px;
+        line-height: 50px;
+        width: 100px;
+        padding: 0 30px;
+        margin-left: 15px;
+        background-color: #38aef0;
+        color: white;
+        cursor: pointer;
+      }
+    }    
+  }
+}

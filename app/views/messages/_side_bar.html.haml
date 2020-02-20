@@ -2,11 +2,11 @@
   .side_bar__username
     .side_bar__username__box
       .side_bar__username__box__left
-        masa
+        = current_user.name
       .side_bar__username__box__right
-        = link_to "#" , class: "iconedit" do
+        = link_to edit_user_path(current_user) , class: "iconedit" do
           %i.far.fa-edit
-        = link_to "#" , class: "iconcog" do
+        = link_to  "#", class: "iconcog" do
           %i.fa.fa-cog
   
   .side_bar__grouplist

@@ -26,25 +26,15 @@
     .main_chat__messageform__box
       .main_chat__messageform__box__type
         .main_chat__messageform__box__type__text
-          -# %label{class: "input-box__text", for: "text"}
-          -#   %placeholder
+
           %input{type: "text", id: "message-content", placeholder:"type a message"}
         .main_chat__messageform__box__type__image
-          /#= f.label :image, class: "form-image" do
-          /  %i.fa.fa-image
-          /  = f.file_field :image 
           %label{class: "input-box__image", for: "image"}
             = icon('fas', 'image')
             %input{type: "file", id: "image"}
     .main_chat__messageform__box__right
       Send
-      -#= form_for @ do |f|
-
-
-      -# = link_to "#" , class: "btn-send" do
-        
-    -# .main_chat__messageform__box__right__btn
-        
+      -#= form_for @ do |f|(今後の実装で使います)
       
     
  

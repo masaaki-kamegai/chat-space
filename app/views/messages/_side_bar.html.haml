@@ -4,16 +4,18 @@
       .side_bar__username__box__left
         = current_user.name
       .side_bar__username__box__right
-        = link_to edit_user_path(current_user) , class: "iconedit" do
+        = link_to new_group_path, class: "iconedit" do
           %i.far.fa-edit
-        = link_to  "#", class: "iconcog" do
+        = link_to edit_user_path(current_user) , class: "iconcog" do
           %i.fa.fa-cog
   
   .side_bar__grouplist
-    .side_bar__grouplist__group
-      .side_bar__grouplist__group__name
-        あ
-      .side_bar__grouplist__group__message
-        メッセージありません
+    - current_user.groups.each do |group|
+      .side_bar__grouplist__group
+        = link_to '#' do
+          .side_bar__grouplist__group__name
+            = group.name
+          .side_bar__grouplist__group__message
+            メッセージありません
     
   

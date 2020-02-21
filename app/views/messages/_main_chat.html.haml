@@ -2,13 +2,13 @@
   .main_chat__groupinfo
     .main_chat__groupinfo__left
       %p.main_chat__groupinfo__left__currentgroup
-        あ
+        = @group.name
       %ul.main_chat__groupinfo__left__currentgroup__user
-        Member :ああ
-        %li.main_chat__groupinfo__left__currentgroup__user__name
+        - @group.group_users.each do |group_user|
+          = group_user.user.name
 
     .main_chat__groupinfo__right
-      = link_to "#" , class: "btn-edit" do
+      = link_to edit_group_path(@group) , class: "btn-edit" do
         Edit
     
   .main_chat__messagelist
@@ -21,20 +21,15 @@
       .main_chat__messagelist__contents__text
         アイウエオ
   
- 
   .main_chat__messageform
-    .main_chat__messageform__box
-      .main_chat__messageform__box__type
-        .main_chat__messageform__box__type__text
-
-          %input{type: "text", id: "message-content", placeholder:"type a message"}
-        .main_chat__messageform__box__type__image
-          %label{class: "input-box__image", for: "image"}
-            = icon('fas', 'image')
-            %input{type: "file", id: "image"}
-    .main_chat__messageform__box__right
-      Send
-      -#= form_for @ do |f|(今後の実装で使います)
-      
-    
+    = form_for [@group, @message] do |f|
+      .main_chat__messageform__box
+        .main_chat__messageform__box__type
+          = f.text_field :content, class: 'type__text', id: "message-content",placeholder: 'type a message'
+          .main_chat__messageform__box__type__image
+            = f.label :image, class: 'input-box__image' do
+              /%label{class: "input-box__image", for: "image"}
+              = icon('fas', 'image')
+              = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'main_chat__messageform__box__right'
  

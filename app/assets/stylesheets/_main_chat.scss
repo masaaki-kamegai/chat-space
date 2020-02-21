@@ -70,9 +70,7 @@
     justify-content: space-between;
     bottom: 0;
     &__box{
-      background-color: white;
       display: flex;
-      width: calc(100% - 100px);
       &__type{
         width: 100%;
         position: relative;

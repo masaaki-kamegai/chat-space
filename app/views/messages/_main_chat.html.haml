@@ -10,17 +10,10 @@
     .main_chat__groupinfo__right
       = link_to edit_group_path(@group) , class: "btn-edit" do
         Edit
-    
   .main_chat__messagelist
-    .main_chat__messagelist__contents
-      .main_chat__messagelist__contents__info
-        .main_chat__messagelist__contents__info__talker
-          あ
-        .main_chat__messagelist__contents__info__date
-          2020/2/20
-      .main_chat__messagelist__contents__text
-        アイウエオ
-  
+    = render @messages
+    
+
   .main_chat__messageform
     = form_for [@group, @message] do |f|
       .main_chat__messageform__box

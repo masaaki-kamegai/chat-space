@@ -1,4 +1,4 @@
-.main_chat__messagelist__contents
+.main_chat__messagelist__contents{"data-message-id": "#{message.id}"}
   .main_chat__messagelist__contents__info
     .main_chat__messagelist__contents__info__talker
       = message.user.name
@@ -9,4 +9,3 @@
       %p.main_chat__messagelist__contents__text__content
         = message.content
     = image_tag message.image.url, class: 'main_chat__messagelist__contents__text__image' if message.image.present?
-  

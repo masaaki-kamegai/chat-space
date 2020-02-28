@@ -4,6 +4,7 @@
       %p.main_chat__groupinfo__left__currentgroup
         = @group.name
       %ul.main_chat__groupinfo__left__currentgroup__user
+        Member :
         - @group.group_users.each do |group_user|
           = group_user.user.name
 
